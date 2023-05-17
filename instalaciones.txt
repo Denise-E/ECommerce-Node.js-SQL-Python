@@ -1,1 +1,4 @@
 npm install -g @vue/cli
+
+Framework CSS: Vuetify
+Framwork JS: Vue
