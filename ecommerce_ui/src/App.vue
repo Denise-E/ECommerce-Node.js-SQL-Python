@@ -27,18 +27,21 @@
 
       <v-spacer></v-spacer>
 
+      
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        v-for="(r, indx) in routes" :key="indx"
         target="_blank"
         text
+        @click = "insertRoute(r.route)"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        <span class="mr-2">{{r.name}}</span>
       </v-btn>
+
     </v-app-bar>
 
     <v-main>
       <router-view/>
+      <!-- Renderizacion de los componentes de la SPA -->
     </v-main>
   </v-app>
 </template>
@@ -49,7 +52,16 @@ export default {
   name: 'App',
 
   data: () => ({
-    //
+    routes:[
+      {name: "Home", route: '/'},
+      {name: "About", route: '/about'},
+      {name: "Product", route: '/products'}
+    ]
   }),
+  methods:{
+    insertRoute(route){
+      this.$router.push(route);
+    }
+  }
 };
 </script>

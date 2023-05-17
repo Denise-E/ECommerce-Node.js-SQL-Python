@@ -1,3 +1,4 @@
+// Variables y logica del negocio
 import Vue from 'vue'
 import Vuex from 'vuex'
 
