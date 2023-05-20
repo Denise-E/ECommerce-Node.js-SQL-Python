@@ -43,7 +43,30 @@
       <router-view/>
       <!-- Renderizacion de los componentes de la SPA -->
     </v-main>
+
+     <v-footer
+        app
+        color="primary"
+        dark
+
+     >
+        <v-row justify="center" no-gutters>
+          <v-btn
+            v-for="link in linksFooter"
+            :key="link"
+            variant="text"
+            class="mx-2"
+          >
+            {{ link }}
+          </v-btn>
+          <v-col class="text-center mt-4" cols="12">
+            {{ new Date().getFullYear() }} — <strong>Denise Eichenblat</strong>
+          </v-col>
+        </v-row>
+      </v-footer>
   </v-app>
+
+
 </template>
 
 <script>
@@ -56,7 +79,15 @@ export default {
       {name: "Home", route: '/'},
       {name: "About", route: '/about'},
       {name: "Product", route: '/products'}
-    ]
+    ],
+    linksFooter: [
+        'Home',
+        'About Us',
+        'Team',
+        'Services',
+        'Blog',
+        'Contact Us',
+      ],
   }),
   methods:{
     insertRoute(route){

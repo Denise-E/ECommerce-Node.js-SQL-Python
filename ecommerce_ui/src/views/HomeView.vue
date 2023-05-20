@@ -2,6 +2,8 @@
   <hello-world />
 </template>
 
+
+
 <script>
   import HelloWorld from '../components/HelloWorld'
 
@@ -9,7 +11,7 @@
     name: 'Home',
 
     components: {
-      HelloWorld,
+      HelloWorld
     },
   }
 </script>
